@@ -190,7 +190,8 @@ namespace LightNode.Swagger
                 var serializer = new DataContractJsonSerializer(typeof(SwaggerDocument), new DataContractJsonSerializerSettings
                 {
                     SerializeReadOnlyTypes = true,
-                    UseSimpleDictionaryFormat = true
+                    UseSimpleDictionaryFormat = true,
+                    RootName = "root"
                 });
                 serializer.WriteObject(ms, doc);
                 return ms.ToArray();
